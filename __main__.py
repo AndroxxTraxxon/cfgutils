@@ -1,18 +1,18 @@
 import sys
+import os
 
 testflags = ("test", "-t")
 
 def main():
-  print("__main__.py:main")
+  # print("{0}:main".format(__file__))
   for testflag in testflags:
     if testflag in sys.argv:
-      importTest()
+      testModule()
       exit(0)
 
 
-def importTest():
-  print("__main__.py:test")
-  print("Testing {0}...".format(str(sys.modules[__name__].__file__)))
+def testModule():
+  print("Running {0}:testModule()".format(os.path.basename(__file__)))
   import cfgutils.tests as tests
   try:
     unittest

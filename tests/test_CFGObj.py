@@ -21,7 +21,7 @@ class test_CFGObj(unittest.TestCase):
     testJSONPath = os.path.join(os.path.dirname(__file__), "data", "testArrayData.json")
     testObj = cfgutils.CFGObj.from_json_file(testJSONPath)
     
-    print("testObj:", str(testObj))
+    print("testObj:", cfgutils.CFGObj.toString(testObj))
     self.assertNotEqual(testObj, None)
     self.assertEqual(testObj[0].a, 123)
     self.assertEqual(testObj[1].b, 456)
